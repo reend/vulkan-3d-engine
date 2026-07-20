@@ -1,0 +1,26 @@
+# Build
+a.out
+*.o
+*.a
+*.so
+*.out
+
+# Compiled shaders
+*.spv
+
+# Core dumps / debug
+core
+core.*
+*.core
+vgcore.*
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
