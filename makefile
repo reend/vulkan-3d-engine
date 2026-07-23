@@ -9,16 +9,18 @@ fragObjFiles = $(patsubst %.frag, %.frag.spv, $(fragSources))
 
 TARGET = a.out
 
+.PHONY: run test clean
+
+run: $(TARGET)
+	./$(TARGET)
+
+test: run
+
 $(TARGET): $(vertObjFiles) $(fragObjFiles) *.cpp *.hpp
 	g++ $(CFLAGS) -o $(TARGET) *.cpp $(LDFLAGS)
 
 %.spv: %
 	$(GLSLC) $< -o $@
-
-.PHONY: test clean
-
-test: $(TARGET)
-	./$(TARGET)
 
 clean:
 	rm -f $(TARGET)
